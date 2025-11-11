@@ -22,36 +22,23 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.hybridge.pizzaoftheday.ui.PizzaMenuScreen
 import com.hybridge.pizzaoftheday.ui.PizzaScreen
 import com.hybridge.pizzaoftheday.ui.PizzaViewModel
-import com.hybridge.pizzaoftheday.ui.theme.PizzaOfTheDayTheme
+import com.hybridge.pizzaoftheday.ui.theme.PizzeriaTheme
+import com.hybridge.pizzaoftheday.ui.theme.PizzeriaTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            PizzaOfTheDayTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    val inner = innerPadding
-                    PizzaScreen()
-                }
+            PizzeriaTheme() {
+                PizzaMenuScreen()
             }
         }
     }
 }
-
-//@Composable
-//fun PizzaScreen(viewModel: PizzaViewModel = viewModel()) {
-//    val pizza = viewModel.pizzaState
-
-//    Column(
-//        modifier = Modifier.fillMaxSize().background(Color(color = 0xFFFFF8E1)).padding(WindowInsets.safeDrawing.asPaddingValues())
-//    ) {
-//        Text(text = "Pizza del dia", fontSize = 28.sp, fontWeight = FontWeight.Bold, color = 0xFFD84315)
-//        Alignment.CenterHorizontally
-//    }
-//}
 
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
@@ -64,7 +51,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
-    PizzaOfTheDayTheme {
+    PizzeriaTheme() {
         Greeting("Android")
     }
 }
