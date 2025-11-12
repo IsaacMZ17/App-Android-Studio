@@ -25,6 +25,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.hybridge.pizzaoftheday.ui.PizzaMenuScreen
 import com.hybridge.pizzaoftheday.ui.PizzaScreen
 import com.hybridge.pizzaoftheday.ui.PizzaViewModel
+import com.hybridge.pizzaoftheday.ui.PizzeriaApp
 import com.hybridge.pizzaoftheday.ui.theme.PizzeriaTheme
 import com.hybridge.pizzaoftheday.ui.theme.PizzeriaTheme
 
@@ -34,7 +35,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             PizzeriaTheme() {
-                PizzaMenuScreen()
+                PizzeriaApp()
             }
         }
     }

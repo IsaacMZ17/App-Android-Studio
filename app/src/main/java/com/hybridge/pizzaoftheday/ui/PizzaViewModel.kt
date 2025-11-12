@@ -5,6 +5,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import com.hybridge.pizzaoftheday.data.repository.PizzaRepositoryImpl
+import com.hybridge.pizzaoftheday.domain.model.Pizza
 import com.hybridge.pizzaoftheday.domain.usecase.GetAllPizzasUseCase
 import com.hybridge.pizzaoftheday.domain.usecase.GetPizzaOfDayUseCase
 
@@ -26,5 +27,10 @@ class PizzaViewModel : ViewModel() {
 
     fun refreshPizzaList() {
         pizzaList = getAllPizzasUseCase.execute()
+    }
+
+    fun findPizzaByName(name: String?): Pizza? {
+        if (name.isNullOrBlank()) return null
+        return pizzaList.firstOrNull { it.type == name }
     }
 }
